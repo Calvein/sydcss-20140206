@@ -1,0 +1,25 @@
+section
+    h2 ::selection
+
+    ul
+        li.fragment Non standard
+        li.fragment Only support 
+            code color
+            | , 
+            code background
+            | , 
+            code background-color
+            |  and 
+            code text-shadow
+        li.fragment Always needs ::-moz-selection & ::selection
+
+    iframe(src='http://francois.robichet.com')
+
+    aside.notes
+        p background-image is ignored
+        p Moz and normal can't be chained, need to duplicate
+
+    style(scoped).
+        .ipsum {
+            text-align: left;
+        }

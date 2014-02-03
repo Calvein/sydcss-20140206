@@ -1,0 +1,20 @@
+* Overview of pseudo-elements ("Things I'm not going to talk about (but I'm actually talking about them)")
+* Difference between pseudo selector/element
+  * p:first-child:first-line will select the first p and create a fake element on the first line
+* https://github.com/twbs/bootstrap/blob/master/less/mixins.less#L59
+* Talk about all (standard) except before & after
+* Forms
+* Before & After
+  * Show statcounter Australia and France
+      * IE7 France with tweet '50% of IE7 is web developper trying their website'
+  * content
+    * text
+    * img
+    * data-attr
+  * tips
+    * clearfix
+    * :before on parent to vertical align child
+    * triangles http://codepen.io/ludviglindblom/pen/KdbEr
+    * Arrow fill & line (transform vs 2 triangles)
+* Non-standard (scrollbars ?)
+* Futur and shadow dom

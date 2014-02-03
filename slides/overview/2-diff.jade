@@ -1,0 +1,31 @@
+section
+    h2 Differences between both
+
+    p.fragment Pseudo-classes selectors, <b>filter</b> stuff to the selected element.
+    p.fragment Pseudo-elements, <b>add a fake element</b> to the selected element.
+
+    .fragment
+        p.left Imagine this HTML
+        pre: code(data-trim).
+            &lt;ul&gt;
+                &lt;li&gt;Bonjour
+                &lt;li&gt;SydCSS
+            &lt;/ul&gt;
+
+    .fragment
+        p.left.
+            This code will select all the <code>&lt;li&gt;</code>,
+            and then them filter to get the first from the parent.
+        pre: code(data-trim).
+            li:first-child {}
+
+    .fragment
+        p.left.
+            While this one will add an empty element before
+            the content of the first <code>&lt;li&gt;</code>.
+        pre: code(data-trim).
+            .li:first-child:before {}
+
+    aside.notes
+        p Pseudo-elements have 2 : in CSS3
+        p ::selection is not in the spec

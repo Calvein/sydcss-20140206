@@ -1,0 +1,30 @@
+section
+    h2 ::first-letter
+
+    .fragment
+        blockquote.lorem
+            span.first-letter L
+            | orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+        
+        blockquote.lorem.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+
+    pre.fragment
+        style(contenteditable, style='display: block')
+            .lorem:first-child .first-letter {
+                font-size: 175%;
+                line-height: 67%;
+                float: left;
+                font-family: serif;
+            }
+
+    aside.notes
+        p Good for initials
+        p I took the example from wikipedia.
+        p No syntax highlighting because it's a style with a display block
+        p Add .lorem:last-child:first-letter
+
+    style(scoped).
+        .lorem {
+            text-align: left;
+        }

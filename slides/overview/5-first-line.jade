@@ -1,0 +1,28 @@
+section
+    h2 ::first-line
+
+    .fragment
+        blockquote(contenteditable).ipsum
+            .first-line.
+                Lorem ipsum dolor sit amet, consectetur
+            | adipisicing elit, sed do eiusmod tempor
+        
+        blockquote(contenteditable).ipsum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+
+    pre.fragment
+        style(contenteditable, style='display: block')
+            .ipsum:first-child .first-line {
+                font-size: 110%;
+                line-height: 67%;
+                font-family: serif;
+            }
+
+    aside.notes
+        p No syntax highlighting because it's a style with a display block
+        p Add .ipsum:last-child:first-line
+
+    style(scoped).
+        .ipsum {
+            text-align: left;
+        }

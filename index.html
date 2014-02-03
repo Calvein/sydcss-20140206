@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Getting real with pseudo-elements</title><meta name="description" content="Getting real with pseudo-elements"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><link rel="stylesheet" href="css/reveal.min.css"><link rel="stylesheet" href="css/theme/moon.css" id="theme"><link rel="stylesheet" href="lib/css/solarized-dark.css"><script src="http://localhost:35729/livereload.js"></script></head><body><div class="reveal"><div class="slides"><section><h1>Getting real with pseudo-elements</h1><p>And with François Robichet (@calvein)</p></section><section><section><h1>Overview</h1></section><section><h2>Things I won't talk about</h2><h4 class="fragment">But I'm actually talkiing about right now</h4><p class="fragment">Pseudo-classes</p><div class="fragment"><ul><li>:active</li><li>:checked</li><li>:default</li><li>:dir()</li><li>:disabled</li><li>:empty</li><li>:enabled</li><li>:first</li><li>:first-child</li><li>:first-of-type</li><li>:fullscreen</li><li>:focus</li><li>:hover</li></ul><ul><li>:indeterminate</li><li>:in-range</li><li>:invalid</li><li>:lang()</li><li>:last-child</li><li>:last-of-type</li><li>:left</li><li>:link</li><li>:not()</li><li>:nth-child()</li><li>:nth-last-child()</li><li>:nth-last-of-type()</li><li>:nth-of-type()</li></ul><ul><li>:only-child</li><li>:only-of-type</li><li>:optional</li><li>:out-of-range</li><li>:read-only</li><li>:read-write</li><li>:required</li><li>:right</li><li>:root</li><li>:scope</li><li>:target</li><li>:valid</li><li>:visited</li></ul></div><a href="http://bit.ly/pseudo-classes" class="fragment">http://bit.ly/pseudo-classes</a><aside class="notes"><p>Alphabetical order</p><p>dir(), left & right are weird</p><p>Link to MDN with list</p></aside><style scoped>ul {
+    display: inline-block;
+    vertical-align: top;
+    list-style: none;
+}
+
+a {
+    font-size: 24px;
+}</style></section><section><h2>Differences between both</h2><p class="fragment">Pseudo-classes selectors, <b>filter</b> stuff to the selected element.</p><p class="fragment">Pseudo-elements, <b>add a fake element</b> to the selected element.</p><div class="fragment"><p class="left">Imagine this HTML</p><pre><code data-trim>&lt;ul&gt;
+    &lt;li&gt;Bonjour
+    &lt;li&gt;SydCSS
+&lt;/ul&gt;
+</code></pre></div><div class="fragment"><p class="left">This code will select all the <code>&lt;li&gt;</code>,
+and then them filter to get the first from the parent.</p><pre><code data-trim>li:first-child {}
+</code></pre></div><div class="fragment"><p class="left">While this one will add an empty element before
+the content of the first <code>&lt;li&gt;</code>.</p><pre><code data-trim>.li:first-child:before {}
+</code></pre></div><aside class="notes"><p>Pseudo-elements have 2 : in CSS3</p><p>::selection is not in the spec</p></aside></section><section><h2>Pseudo-elements</h2><ul><li class="fragment">::first-letter</li><li class="fragment">::first-line</li><li class="fragment">::selection</li><li class="fragment">::before</li><li class="fragment">::after</li></ul><a href="http://bit.ly/pseudo-elements" class="fragment">http://bit.ly/pseudo-elements</a><aside class="notes"><p>List from MDN with links</p></aside><style scoped>ul {
+    list-style: none;
+}
+
+a {
+    display: block;
+    font-size: 24px;
+}</style></section><section><h2>::first-letter</h2><div class="fragment"><blockquote class="lorem"><span class="first-letter">L</span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</blockquote><blockquote class="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+</blockquote></div><pre class="fragment"><style contenteditable style="display: block">.lorem:first-child .first-letter {
+    font-size: 175%;
+    line-height: 67%;
+    float: left;
+    font-family: serif;
+}
+</style></pre><aside class="notes"><p>Good for initials</p><p>I took the example from wikipedia.</p><p>No syntax highlighting because it's a style with a display block</p><p>Add .lorem:last-child:first-letter</p></aside><style scoped>.lorem {
+    text-align: left;
+}</style></section><section><h2>::first-line</h2><div class="fragment"><blockquote contenteditable class="ipsum"><div class="first-line">Lorem ipsum dolor sit amet, consectetur</div>adipisicing elit, sed do eiusmod tempor</blockquote><blockquote contenteditable class="ipsum">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+</blockquote></div><pre class="fragment"><style contenteditable style="display: block">.ipsum:first-child .first-line {
+    font-size: 110%;
+    line-height: 67%;
+    font-family: serif;
+}
+</style></pre><aside class="notes"><p>No syntax highlighting because it's a style with a display block</p><p>Add .ipsum:last-child:first-line</p></aside><style scoped>.ipsum {
+    text-align: left;
+}</style></section><section><h2>Both</h2><div class="fragment">Iframe for polygon
+</div><style scoped>.ipsum {
+    text-align: left;
+}</style></section><section><h2>::selection</h2><ul><li class="fragment">Non standard</li><li class="fragment">Only support <code>color</code>, <code>background</code>, <code>background-color</code> and <code>text-shadow</code></li><li class="fragment">Always needs ::-moz-selection & ::selection</li></ul><iframe src="http://francois.robichet.com"></iframe><aside class="notes"><p>background-image is ignored</p><p>Moz and normal can't be chained, need to duplicate</p></aside><style scoped>.ipsum {
+    text-align: left;
+}</style></section></section><section><section><h1>Before/after</h1></section></section><section><section><h1>Futur</h1></section></section></div></div><script src="lib/js/head.min.js"></script><script src="js/reveal.js"></script><script src="bundle.js"></script></body></html>

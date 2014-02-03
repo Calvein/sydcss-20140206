@@ -1,0 +1,42 @@
+doctype 5
+html(lang='en')
+    head
+        meta(charset='utf-8')
+
+        title Getting real with pseudo-elements
+
+        meta(name="description", content="Getting real with pseudo-elements")
+
+        meta(name="apple-mobile-web-app-capable", content="yes")
+        meta(name="apple-mobile-web-app-status-bar-style", content="black-translucent")
+
+        meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+
+        link(rel="stylesheet", href="css/reveal.min.css")
+        link(rel="stylesheet", href="css/theme/moon.css", id="theme")
+        link(rel="stylesheet", href="lib/css/solarized-dark.css")
+
+        script(src="http://localhost:35729/livereload.js")
+
+    body
+        .reveal
+            //- Any section tag in here is displayed as a slide
+            .slides
+                include slides/title
+                section
+                    section: h1 Overview
+                    include slides/overview/1-pseudo-classes
+                    include slides/overview/2-diff
+                    include slides/overview/3-pseudo-elements
+                    include slides/overview/4-first-letter
+                    include slides/overview/5-first-line
+                    include slides/overview/6-both
+                    include slides/overview/7-selection
+                section
+                    section: h1 Before/after
+                section
+                    section: h1 Futur
+
+        script(src="lib/js/head.min.js")
+        script(src="js/reveal.js")
+        script(src="bundle.js")
