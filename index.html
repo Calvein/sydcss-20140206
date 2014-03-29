@@ -14,33 +14,55 @@ a {
 and then them filter to get the first from the parent.</p><pre><code data-trim>li:first-child {}
 </code></pre></div><div class="fragment"><p class="left">While this one will add an empty element before
 the content of the first <code>&lt;li&gt;</code>.</p><pre><code data-trim>.li:first-child:before {}
-</code></pre></div><aside class="notes"><p>Pseudo-elements have 2 : in CSS3</p><p>::selection is not in the spec</p></aside></section><section><h2>Pseudo-elements</h2><ul><li class="fragment">::first-letter</li><li class="fragment">::first-line</li><li class="fragment">::selection</li><li class="fragment">::before</li><li class="fragment">::after</li></ul><a href="http://bit.ly/pseudo-elements" class="fragment">http://bit.ly/pseudo-elements</a><aside class="notes"><p>List from MDN with links</p></aside><style scoped>ul {
+</code></pre></div><aside class="notes"><p>Pseudo-elements have 2 : in CSS3</p><p>::selection is not in the spec</p></aside></section><section><h2>Pseudo-elements</h2><ul><li class="fragment">::first-letter</li><li class="fragment">::first-line</li><li class="fragment">::selection</li><li class="fragment">::before</li><li class="fragment">::after</li></ul><a href="http://bit.ly/pseudo-elements" class="fragment">http://bit.ly/pseudo-elements</a><aside class="notes"><p>can be with only 1 : execpt selection</p><p>::selection is not standard</p><p>List from MDN with links</p></aside><style scoped>ul {
     list-style: none;
 }
 
 a {
     display: block;
     font-size: 24px;
-}</style></section><section><h2>::first-letter</h2><div class="fragment"><blockquote class="lorem"><span class="first-letter">L</span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</blockquote><blockquote class="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+}</style></section><section><h2>::first-letter</h2><div class="fragment"><blockquote contenteditable class="lorem"><span class="first-letter">L</span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</blockquote><blockquote contenteditable class="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 </blockquote></div><pre class="fragment"><style contenteditable style="display: block">.lorem:first-child .first-letter {
     font-size: 175%;
     line-height: 67%;
     float: left;
     font-family: serif;
 }
-</style></pre><aside class="notes"><p>Good for initials</p><p>I took the example from wikipedia.</p><p>No syntax highlighting because it's a style with a display block</p><p>Add .lorem:last-child:first-letter</p></aside><style scoped>.lorem {
+</style></pre><aside class="notes"><p>Good for initials</p><p>Not all CSS properties, font, text, margin, padding, border, background, etc...</p><p>Add .lorem:last-child:first-letter</p></aside><style scoped>.lorem {
     text-align: left;
 }</style></section><section><h2>::first-line</h2><div class="fragment"><blockquote contenteditable class="ipsum"><div class="first-line">Lorem ipsum dolor sit amet, consectetur</div>adipisicing elit, sed do eiusmod tempor</blockquote><blockquote contenteditable class="ipsum">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-</blockquote></div><pre class="fragment"><style contenteditable style="display: block">.ipsum:first-child .first-line {
+</blockquote></div><pre class="fragment"><style contenteditable style="display: block">.ipsum:first-child .first-line, .ipsum:last-child:first-line {
     font-size: 110%;
     line-height: 67%;
     font-family: serif;
 }
 </style></pre><aside class="notes"><p>No syntax highlighting because it's a style with a display block</p><p>Add .ipsum:last-child:first-line</p></aside><style scoped>.ipsum {
     text-align: left;
-}</style></section><section><h2>Both</h2><div class="fragment">Iframe for polygon
-</div><style scoped>.ipsum {
+}</style></section><section><h2>Both</h2><div><p>It's tricky to write about <em>TowerFall Ascension</em> without sounding like a child — mostly because it's a powerful distillery of childlike glee.</p><p>I can say, without an ounce of hyperbole, that I have never shouted, cheered or laughed so much playing a game in my life. <i>TowerFall Ascension</i> is designed to evoke these reactions in every single match, and it always, always does. Regardless of how its settings and variables have been tinkered, or the relative skill levels of its players, the matchup is exciting and dynamic every single time.</p></div><style scoped>p:first-of-type {
+    font-size: 1.125em;
+}
+p:first-of-type:first-line {
+    color: #98225e;
+}
+p:first-of-type:first-letter {
+    font-family: 'Gotham SSm A','Gotham SSm B',sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: inherit;
+    float: left;
+    font-size: 5em;
+    line-height: .875em;
+    padding: 2px .125em 0 0;
+    margin-left: -5px;
+    color: #98225e;
+    background: -webkit-gradient(linear,left top,left bottom,from(#98225e),to(#6f2c4f)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+p {
     text-align: left;
-}</style></section><section><h2>::selection</h2><ul><li class="fragment">Non standard</li><li class="fragment">Only support <code>color</code>, <code>background</code>, <code>background-color</code> and <code>text-shadow</code></li><li class="fragment">Always needs ::-moz-selection & ::selection</li></ul><iframe src="http://francois.robichet.com"></iframe><aside class="notes"><p>background-image is ignored</p><p>Moz and normal can't be chained, need to duplicate</p></aside><style scoped>.ipsum {
-    text-align: left;
+}</style></section><section><h2>::selection</h2><ul><li class="fragment">Non standard</li><li class="fragment">Only support <code>color</code>, <code>background</code>, <code>background-color</code> and <code>text-shadow</code></li><li class="fragment">Always needs ::-moz-selection & ::selection</li></ul><iframe src="http://francois.robichet.com" class="fragment"></iframe><aside class="notes"><p>Moz and normal can't be chained, need to duplicate</p></aside><style scoped>iframe {
+    width: 100%;
+    min-height: 200px;
 }</style></section></section><section><section><h1>Before/after</h1></section></section><section><section><h1>Futur</h1></section></section></div></div><script src="lib/js/head.min.js"></script><script src="js/reveal.js"></script><script src="bundle.js"></script></body></html>

@@ -30,7 +30,7 @@ var RevealNotes = (function() {
 				nextindexh,
 				nextindexv;
 
-			if( slideElement.nextElementSibling && slideElement.parentNode.nodeName == 'SECTION' ) {
+			if ( slideElement.nextElementSibling && slideElement.parentNode.nodeName == 'SECTION' ) {
 				nextindexh = slideIndices.h;
 				nextindexv = slideIndices.v + 1;
 			} else {
@@ -58,7 +58,7 @@ var RevealNotes = (function() {
 	}
 
 	// If the there's a 'notes' query set, open directly
-	if( window.location.search.match( /(\?|\&)notes/gi ) !== null ) {
+	if ( window.location.search.match( /(\?|\&)notes/gi ) !== null ) {
 		openNotes();
 	}
 
@@ -68,7 +68,7 @@ var RevealNotes = (function() {
 		// modifier is present
 		if ( document.querySelector( ':focus' ) !== null || event.shiftKey || event.altKey || event.ctrlKey || event.metaKey ) return;
 
-		if( event.keyCode === 83 ) {
+		if ( event.keyCode === 83 ) {
 			event.preventDefault();
 			openNotes();
 		}

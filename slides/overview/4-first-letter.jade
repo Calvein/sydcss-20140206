@@ -2,11 +2,11 @@ section
     h2 ::first-letter
 
     .fragment
-        blockquote.lorem
+        blockquote(contenteditable).lorem
             span.first-letter L
             | orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
         
-        blockquote.lorem.
+        blockquote(contenteditable).lorem.
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 
     pre.fragment
@@ -20,8 +20,7 @@ section
 
     aside.notes
         p Good for initials
-        p I took the example from wikipedia.
-        p No syntax highlighting because it's a style with a display block
+        p Not all CSS properties, font, text, margin, padding, border, background, etc...
         p Add .lorem:last-child:first-letter
 
     style(scoped).

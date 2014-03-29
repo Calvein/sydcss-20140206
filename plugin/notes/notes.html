@@ -184,8 +184,8 @@
 						currentSlide.contentWindow.Reveal.slide( data.indexh, data.indexv, data.indexf );
 						nextSlide.contentWindow.Reveal.slide( data.nextindexh, data.nextindexv );
 
-						// Show fargment by default
-						var css = '.fragment { opacity: 1 !important }'
+						// Show fragment by default
+						var css = '.fragment { opacity: .8 !important }'
 						;[].slice.call(frames).forEach(function(iframe) {
 							var style = document.createElement('style')
 							style.appendChild(document.createTextNode(css))
