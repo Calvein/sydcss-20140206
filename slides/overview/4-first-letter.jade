@@ -2,16 +2,17 @@ section
     h2 ::first-letter
 
     .fragment
-        blockquote(contenteditable).lorem
+        blockquote.lorem
             span.first-letter L
             | orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
         
-        blockquote(contenteditable).lorem.
+        blockquote.lorem.
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 
     pre.fragment
         style(contenteditable, style='display: block').
-            .lorem:first-child .first-letter {
+            .lorem:first-child .first-letter { /*,
+            .lorem:last-child:first-letter { */
                 font-size: 175%;
                 line-height: 67%;
                 float: left;
@@ -21,7 +22,6 @@ section
     aside.notes
         p Good for initials
         p Not all CSS properties, font, text, margin, padding, border, background, etc...
-        p Add .lorem:last-child:first-letter
 
     style(scoped).
         .lorem {

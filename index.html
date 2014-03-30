@@ -21,23 +21,28 @@ the content of the first <code>&lt;li&gt;</code>.</p><pre><code data-trim>.li:fi
 a {
     display: block;
     font-size: 24px;
-}</style></section><section><h2>::first-letter</h2><div class="fragment"><blockquote contenteditable class="lorem"><span class="first-letter">L</span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</blockquote><blockquote contenteditable class="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-</blockquote></div><pre class="fragment"><style contenteditable style="display: block">.lorem:first-child .first-letter {
+}</style></section><section><h2>::first-letter</h2><div class="fragment"><blockquote class="lorem"><span class="first-letter">L</span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</blockquote><blockquote class="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+</blockquote></div><pre class="fragment"><style contenteditable style="display: block">.lorem:first-child .first-letter { /*,
+.lorem:last-child:first-letter { */
     font-size: 175%;
     line-height: 67%;
     float: left;
     font-family: serif;
 }
-</style></pre><aside class="notes"><p>Good for initials</p><p>Not all CSS properties, font, text, margin, padding, border, background, etc...</p><p>Add .lorem:last-child:first-letter</p></aside><style scoped>.lorem {
+</style></pre><aside class="notes"><p>Good for initials</p><p>Not all CSS properties, font, text, margin, padding, border, background, etc...</p></aside><style scoped>.lorem {
     text-align: left;
-}</style></section><section><h2>::first-line</h2><div class="fragment"><blockquote contenteditable class="ipsum"><div class="first-line">Lorem ipsum dolor sit amet, consectetur</div>adipisicing elit, sed do eiusmod tempor</blockquote><blockquote contenteditable class="ipsum">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-</blockquote></div><pre class="fragment"><style contenteditable style="display: block">.ipsum:first-child .first-line, .ipsum:last-child:first-line {
+}</style></section><section><h2>::first-line</h2><div class="fragment"><blockquote class="ipsum"><div class="first-line">Lorem ipsum dolor sit amet, consectetur</div>adipisicing elit, sed do eiusmod tempor</blockquote><blockquote class="ipsum">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+</blockquote></div><pre class="fragment"><style contenteditable style="display: block">.ipsum:first-child .first-line,
+.ipsum:last-child:first-line {
     font-size: 110%;
     line-height: 67%;
     font-family: serif;
 }
 </style></pre><aside class="notes"><p>No syntax highlighting because it's a style with a display block</p><p>Add .ipsum:last-child:first-line</p></aside><style scoped>.ipsum {
+    position: static;
     text-align: left;
+    resize: both;
+    overflow: auto;
 }</style></section><section><h2>Both</h2><div><p>It's tricky to write about <em>TowerFall Ascension</em> without sounding like a child — mostly because it's a powerful distillery of childlike glee.</p><p>I can say, without an ounce of hyperbole, that I have never shouted, cheered or laughed so much playing a game in my life. <i>TowerFall Ascension</i> is designed to evoke these reactions in every single match, and it always, always does. Regardless of how its settings and variables have been tinkered, or the relative skill levels of its players, the matchup is exciting and dynamic every single time.</p></div><aside class="notes"><p>Taken from polygon</p></aside><style scoped>/* Taken from polygon, don't judge me :( */
 p:first-of-type {
     font-size: 1.125em;
@@ -78,7 +83,7 @@ p {
 [data-section=example] p:nth-child(4):before {
     content: attr(data-email);
 }
-</style></pre></div><aside class="notes"><p>Don't put content in it, screen readers & bot don't read them</p></aside></section><section><h2>Arrows</h2><iframe src="http://codepen.io/Calvein/full/tjKba"></iframe><p>by<a href="http://twitter.com/chriscoyier">Chris Coyier (@chriscoyier)</a></p><aside class="notes"><p><b>Click in the pen</b></p><p>Use hands and rectangles to show border</p></aside><style scoped>iframe {
+</style></pre></div><aside class="notes"><p>Don't put content in it, screen readers & bot don't read them</p></aside></section><section><h2>Arrows</h2><iframe src="http://codepen.io/Calvein/full/tjKba"></iframe><p>by <a href="http://twitter.com/chriscoyier">Chris Coyier (@chriscoyier)</a></p><aside class="notes"><p><b>Click in the pen</b></p><p>Use hands and rectangles to show border</p></aside><style scoped>iframe {
     width: 100%;
     min-height: 300px;
 }</style></section><section data-section="shapes"><h2>Shapes</h2><div class="fragment"><h4>Circles</h4><p class="example circle">I have a bullet point</p><pre><style contenteditable style="display: block">[data-section=shapes] .example:before {
@@ -128,4 +133,7 @@ p {
     vertical-align: middle;
     height: 100%;
 }
-</style></pre><aside class="notes"><p>We don't have the size of anything (so no top 50% margin-top - width / 2)</p><p>Needs only inline blocks inside</p></aside></section></section><section><section><h1>Voilà</h1><p>François Robichet <a href="http://twitter.com/calvein">(@calvein)</a></p><a href="http://bit.ly/pseudo-elements-talk">http://bit.ly/pseudo-elements-talk</a></section></section></div></div><script src="lib/js/head.min.js"></script><script src="js/reveal.js"></script><script src="bundle.js"></script></body></html>
+</style></pre><aside class="notes"><p>We don't have the size of anything (so no top 50% margin-top - width / 2)</p><p>Needs only inline blocks inside</p></aside></section><section><h2>Ribbons</h2><iframe src="http://soiheardyouliekribbon.com/v2/#BADA55"></iframe><p>See <a href="http://soiheardyouliekribbon.com/">http://soiheardyouliekribbon.com</a></p><aside class="notes"><p><b>3 el, h1, i & u</b></p></aside><style scoped>iframe {
+    width: 100%;
+    min-height: 400px;
+}</style></section></section><section><section><h1>Voilà</h1><p>François Robichet <a href="http://twitter.com/calvein">(@calvein)</a></p><a href="http://bit.ly/pseudo-elements-talk">http://bit.ly/pseudo-elements-talk</a></section></section></div></div><script src="lib/js/head.min.js"></script><script src="js/reveal.js"></script><script src="bundle.js"></script></body></html>

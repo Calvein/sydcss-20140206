@@ -2,17 +2,18 @@ section
     h2 ::first-line
 
     .fragment
-        blockquote(contenteditable).ipsum
+        blockquote.ipsum
             .first-line.
                 Lorem ipsum dolor sit amet, consectetur
             | adipisicing elit, sed do eiusmod tempor
         
-        blockquote(contenteditable).ipsum.
+        blockquote.ipsum.
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 
     pre.fragment
         style(contenteditable, style='display: block').
-            .ipsum:first-child .first-line, .ipsum:last-child:first-line {
+            .ipsum:first-child .first-line,
+            .ipsum:last-child:first-line {
                 font-size: 110%;
                 line-height: 67%;
                 font-family: serif;
@@ -24,5 +25,8 @@ section
 
     style(scoped).
         .ipsum {
+            position: static;
             text-align: left;
+            resize: both;
+            overflow: auto;
         }
