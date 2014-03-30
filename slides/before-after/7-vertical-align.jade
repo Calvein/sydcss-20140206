@@ -1,0 +1,32 @@
+section(data-section='vertical-align')
+    h2 Vertical align
+
+    p
+        span I'm aligned
+        |  
+        span Me too
+
+    pre
+        style(contenteditable, style='display: block').
+            [data-section=vertical-align] p {
+                height: 200px;
+                background: #003C4B;
+            }
+
+            [data-section=vertical-align] p span:last-child {
+                color: red;
+            }
+
+    pre.fragment
+        style(contenteditable, style='display: block').
+            /*
+            [data-section=vertical-align] p:before {
+                content: '';
+                display: inline-block;
+                vertical-align: middle;
+                height: 100%;
+            }
+
+    aside.notes
+        p We don't have the size of anything (so no top 50% margin-top - width / 2)
+        p Needs only inline blocks inside

@@ -1,0 +1,16 @@
+section
+    h2 Clearfix
+
+    pre: code(data-trim).
+        .clearfix:before,
+        .clearfix:after {
+            content: " ";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+    aside.notes
+        p Popularized by HTML5boilerplate, used in Bootstrap

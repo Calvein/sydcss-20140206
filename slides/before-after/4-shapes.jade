@@ -1,0 +1,47 @@
+section(data-section='shapes')
+    h2 Shapes
+
+    .fragment
+        h4 Circles
+
+        p.example.circle I have a bullet point
+
+        pre
+            style(contenteditable, style='display: block').
+                [data-section=shapes] .example:before {
+                    content: '';
+                    display: inline-block;
+                    width: 20px;
+                    margin-right: 4px;
+                }
+
+                [data-section=shapes] .circle:before {
+                    height: 20px;
+                    border-radius: 50%;
+                    background: #bada55;
+                }
+
+    .fragment
+        h4 Tick
+
+        p.example.tick I have a tick
+
+        pre
+            style(contenteditable, style='display: block').
+                [data-section=shapes] .tick:before {
+                    height: 10px;
+                    border: 0 solid #bada55;
+                    border-width: 0 0 1px 1px;
+                    -webkit-transform: rotate(-45deg);
+                    -webkit-transform-origin: 0;
+                }
+
+    ul.fragment
+        li: a(href='https://css-tricks.com/examples/ShapesOfCSS/') Shape of CSS 
+        li
+            a(href='http://nicolasgallagher.com/pure-css-gui-icons/demo/') Pure CSS GUI icons
+            |  by 
+            a(href='https://twitter.com/necolas') Nicolas Gallagher (@necolas)
+
+    aside.notes
+        p Intro to next slide

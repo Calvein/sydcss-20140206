@@ -33,9 +33,23 @@ html(lang='en')
                     include slides/overview/6-both
                     include slides/overview/7-selection
                 section
-                    section: h1 Before/after
+                    section: h1 :Before/:after
+                        aside.notes
+                            p Before/after needs a content, event empty string
+                            p Not on self closing tag element
+                    include slides/before-after/1-content
+                    include slides/before-after/2-example
+                    include slides/before-after/3-arrows
+                    include slides/before-after/4-shapes
+                    include slides/before-after/5-examples
+                    include slides/before-after/6-clearfix
+                    include slides/before-after/7-vertical-align
                 section
-                    section: h1 Futur
+                    section
+                        h1 Voilà
+                        p François Robichet 
+                            a(href='http://twitter.com/calvein') (@calvein)
+                        a(href='http://bit.ly/pseudo-elements-talk') http://bit.ly/pseudo-elements-talk
 
         script(src="lib/js/head.min.js")
         script(src="js/reveal.js")

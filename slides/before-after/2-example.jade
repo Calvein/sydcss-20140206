@@ -1,0 +1,26 @@
+section(data-section='example')
+    h2 Examples
+
+    .fragment
+        p.example francois@robichet.com
+        p.example francois@robichet.com
+        p.example francois@robichet.com
+        p.example(data-email='francois@robichet.com')
+
+        pre.fragment
+            style(contenteditable, style='display: block').
+                [data-section=example] p:nth-child(1):before {
+                    content: 'Email: ';
+                }
+                [data-section=example] p:nth-child(2):before {
+                    content: '\2709'; /* Or ✉ */
+                }
+                [data-section=example] p:nth-child(3):before {
+                    content: url(img/email.jpg);
+                }
+                [data-section=example] p:nth-child(4):before {
+                    content: attr(data-email);
+                }
+
+    aside.notes
+        p Don't put content in it, screen readers & bot don't read them

@@ -14,7 +14,7 @@ a {
 and then them filter to get the first from the parent.</p><pre><code data-trim>li:first-child {}
 </code></pre></div><div class="fragment"><p class="left">While this one will add an empty element before
 the content of the first <code>&lt;li&gt;</code>.</p><pre><code data-trim>.li:first-child:before {}
-</code></pre></div><aside class="notes"><p>Pseudo-elements have 2 : in CSS3</p><p>::selection is not in the spec</p></aside></section><section><h2>Pseudo-elements</h2><ul><li class="fragment">::first-letter</li><li class="fragment">::first-line</li><li class="fragment">::selection</li><li class="fragment">::before</li><li class="fragment">::after</li></ul><a href="http://bit.ly/pseudo-elements" class="fragment">http://bit.ly/pseudo-elements</a><aside class="notes"><p>can be with only 1 : execpt selection</p><p>::selection is not standard</p><p>List from MDN with links</p></aside><style scoped>ul {
+</code></pre></div><aside class="notes"><p>Pseudo-elements have 2 : in CSS3</p></aside></section><section><h2>Pseudo-elements</h2><ul><li class="fragment">::first-letter</li><li class="fragment">::first-line</li><li class="fragment">::selection</li><li class="fragment">::before</li><li class="fragment">::after</li></ul><a href="http://bit.ly/pseudo-elements" class="fragment">http://bit.ly/pseudo-elements</a><aside class="notes"><p>Since IE8</p><p>::selection is not standard</p><p>List from MDN with links</p></aside><style scoped>ul {
     list-style: none;
 }
 
@@ -38,7 +38,8 @@ a {
 }
 </style></pre><aside class="notes"><p>No syntax highlighting because it's a style with a display block</p><p>Add .ipsum:last-child:first-line</p></aside><style scoped>.ipsum {
     text-align: left;
-}</style></section><section><h2>Both</h2><div><p>It's tricky to write about <em>TowerFall Ascension</em> without sounding like a child — mostly because it's a powerful distillery of childlike glee.</p><p>I can say, without an ounce of hyperbole, that I have never shouted, cheered or laughed so much playing a game in my life. <i>TowerFall Ascension</i> is designed to evoke these reactions in every single match, and it always, always does. Regardless of how its settings and variables have been tinkered, or the relative skill levels of its players, the matchup is exciting and dynamic every single time.</p></div><style scoped>p:first-of-type {
+}</style></section><section><h2>Both</h2><div><p>It's tricky to write about <em>TowerFall Ascension</em> without sounding like a child — mostly because it's a powerful distillery of childlike glee.</p><p>I can say, without an ounce of hyperbole, that I have never shouted, cheered or laughed so much playing a game in my life. <i>TowerFall Ascension</i> is designed to evoke these reactions in every single match, and it always, always does. Regardless of how its settings and variables have been tinkered, or the relative skill levels of its players, the matchup is exciting and dynamic every single time.</p></div><aside class="notes"><p>Taken from polygon</p></aside><style scoped>/* Taken from polygon, don't judge me :( */
+p:first-of-type {
     font-size: 1.125em;
 }
 p:first-of-type:first-line {
@@ -65,4 +66,66 @@ p {
 }</style></section><section><h2>::selection</h2><ul><li class="fragment">Non standard</li><li class="fragment">Only support <code>color</code>, <code>background</code>, <code>background-color</code> and <code>text-shadow</code></li><li class="fragment">Always needs ::-moz-selection & ::selection</li></ul><iframe src="http://francois.robichet.com" class="fragment"></iframe><aside class="notes"><p>Moz and normal can't be chained, need to duplicate</p></aside><style scoped>iframe {
     width: 100%;
     min-height: 200px;
-}</style></section></section><section><section><h1>Before/after</h1></section></section><section><section><h1>Futur</h1></section></section></div></div><script src="lib/js/head.min.js"></script><script src="js/reveal.js"></script><script src="bundle.js"></script></body></html>
+}</style></section></section><section><section><h1>:Before/:after<aside class="notes"><p>Before/after needs a content, event empty string</p><p>Not on self closing tag element</p></aside></h1></section><section><h2>Content</h2><ul><li class="fragment"><code>'string'</code></li><li class="fragment"><code>url(URI)</code></li><li class="fragment"><code>attr(ATTR)</code></li><li class="fragment"><code>counter</code> and <code>quote</code> stuff</li></ul><aside class="notes"><p>Normal, none, inherit & initial do nothing and let it hidden</p><p>String, even empty shows it, you can put ASCII characters too</p><p>URI for image, svg, CSS gradient</p><p>Attr return the content of the attribute, usefull for i18n'n'shit</p><p>counter is to make list with non-list element, basically</p><p>quote, who care</p><p><b>I'll show tips</b></p></aside></section><section data-section="example"><h2>Examples</h2><div class="fragment"><p class="example">francois@robichet.com</p><p class="example">francois@robichet.com</p><p class="example">francois@robichet.com</p><p data-email="francois@robichet.com" class="example"></p><pre class="fragment"><style contenteditable style="display: block">[data-section=example] p:nth-child(1):before {
+    content: 'Email: ';
+}
+[data-section=example] p:nth-child(2):before {
+    content: '\2709'; /* Or ✉ */
+}
+[data-section=example] p:nth-child(3):before {
+    content: url(img/email.jpg);
+}
+[data-section=example] p:nth-child(4):before {
+    content: attr(data-email);
+}
+</style></pre></div><aside class="notes"><p>Don't put content in it, screen readers & bot don't read them</p></aside></section><section><h2>Arrows</h2><iframe src="http://codepen.io/Calvein/full/tjKba"></iframe><p>by<a href="http://twitter.com/chriscoyier">Chris Coyier (@chriscoyier)</a></p><aside class="notes"><p><b>Click in the pen</b></p><p>Use hands and rectangles to show border</p></aside><style scoped>iframe {
+    width: 100%;
+    min-height: 300px;
+}</style></section><section data-section="shapes"><h2>Shapes</h2><div class="fragment"><h4>Circles</h4><p class="example circle">I have a bullet point</p><pre><style contenteditable style="display: block">[data-section=shapes] .example:before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    margin-right: 4px;
+}
+
+[data-section=shapes] .circle:before {
+    height: 20px;
+    border-radius: 50%;
+    background: #bada55;
+}
+</style></pre></div><div class="fragment"><h4>Tick</h4><p class="example tick">I have a tick</p><pre><style contenteditable style="display: block">[data-section=shapes] .tick:before {
+    height: 10px;
+    border: 0 solid #bada55;
+    border-width: 0 0 1px 1px;
+    -webkit-transform: rotate(-45deg);
+    -webkit-transform-origin: 0;
+}
+</style></pre></div><ul class="fragment"><li><a href="https://css-tricks.com/examples/ShapesOfCSS/">Shape of CSS </a></li><li><a href="http://nicolasgallagher.com/pure-css-gui-icons/demo/">Pure CSS GUI icons</a> by <a href="https://twitter.com/necolas">Nicolas Gallagher (@necolas)</a></li></ul><aside class="notes"><p>Intro to next slide</p></aside></section><section><h2>Real life examples</h2><img src="img/arrows.png" class="fragment"><img src="img/circle.png" class="fragment"><img src="img/heaps.png" class="fragment"><img src="img/heaps2.png" class="fragment"><aside class="notes"><p>Small triangle in a bigger one</p><p>Circle, easy to change color & size</p></aside><style scoped>img {
+    display: block;
+    margin: 10px auto;
+    border: 0;
+}</style></section><section><h2>Clearfix</h2><pre><code data-trim>.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+</code></pre><aside class="notes"><p>Popularized by HTML5boilerplate, used in Bootstrap</p></aside></section><section data-section="vertical-align"><h2>Vertical align</h2><p><span>I'm aligned</span> <span>Me too</span></p><pre><style contenteditable style="display: block">[data-section=vertical-align] p {
+    height: 200px;
+    background: #003C4B;
+}
+
+[data-section=vertical-align] p span:last-child {
+    color: red;
+}
+</style></pre><pre class="fragment"><style contenteditable style="display: block">/*
+[data-section=vertical-align] p:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+</style></pre><aside class="notes"><p>We don't have the size of anything (so no top 50% margin-top - width / 2)</p><p>Needs only inline blocks inside</p></aside></section></section><section><section><h1>Voilà</h1><p>François Robichet <a href="http://twitter.com/calvein">(@calvein)</a></p><a href="http://bit.ly/pseudo-elements-talk">http://bit.ly/pseudo-elements-talk</a></section></section></div></div><script src="lib/js/head.min.js"></script><script src="js/reveal.js"></script><script src="bundle.js"></script></body></html>
