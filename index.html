@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Getting real with pseudo-elements</title><meta name="description" content="Getting real with pseudo-elements"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><link rel="stylesheet" href="css/reveal.min.css"><link rel="stylesheet" href="css/theme/moon.css" id="theme"><link rel="stylesheet" href="lib/css/solarized-dark.css"><script src="http://localhost:35729/livereload.js"></script></head><body><div class="reveal"><div class="slides"><section><h1>Getting real with pseudo-elements</h1><p>And with François Robichet (@calvein)</p></section><section><section><h1>Overview</h1></section><section><h2>Things I won't talk about</h2><h4 class="fragment">But I'm actually talkiing about right now</h4><p class="fragment">Pseudo-classes</p><div class="fragment"><ul><li>:active</li><li>:checked</li><li>:default</li><li>:dir()</li><li>:disabled</li><li>:empty</li><li>:enabled</li><li>:first</li><li>:first-child</li><li>:first-of-type</li><li>:fullscreen</li><li>:focus</li><li>:hover</li></ul><ul><li>:indeterminate</li><li>:in-range</li><li>:invalid</li><li>:lang()</li><li>:last-child</li><li>:last-of-type</li><li>:left</li><li>:link</li><li>:not()</li><li>:nth-child()</li><li>:nth-last-child()</li><li>:nth-last-of-type()</li><li>:nth-of-type()</li></ul><ul><li>:only-child</li><li>:only-of-type</li><li>:optional</li><li>:out-of-range</li><li>:read-only</li><li>:read-write</li><li>:required</li><li>:right</li><li>:root</li><li>:scope</li><li>:target</li><li>:valid</li><li>:visited</li></ul></div><a href="http://bit.ly/pseudo-classes" class="fragment">http://bit.ly/pseudo-classes</a><aside class="notes"><p>Alphabetical order</p><p>dir(), left & right are weird</p><p>Link to MDN with list</p></aside><style scoped>ul {
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Getting real with pseudo-elements</title><meta name="description" content="Getting real with pseudo-elements"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><link rel="stylesheet" href="css/reveal.min.css"><link rel="stylesheet" href="css/theme/moon.css" id="theme"><link rel="stylesheet" href="lib/css/solarized-dark.css"><script src="http://localhost:35729/livereload.js"></script></head><body><div class="reveal"><div class="slides"><section><h1>Getting real with pseudo-elements</h1><p>And with François Robichet (@calvein)</p></section><section><section><h1>Overview<aside class="notes"><p>Quick definition</p><p>Things I'm not going to talk about</p></aside></h1></section><section><h2>Things I won't talk about</h2><h4 class="fragment">But I'm actually talkiing about right now</h4><p class="fragment">Pseudo-classes</p><div class="fragment"><ul><li>:active</li><li>:checked</li><li>:default</li><li>:dir()</li><li>:disabled</li><li>:empty</li><li>:enabled</li><li>:first</li><li>:first-child</li><li>:first-of-type</li><li>:fullscreen</li><li>:focus</li><li>:hover</li></ul><ul><li>:indeterminate</li><li>:in-range</li><li>:invalid</li><li>:lang()</li><li>:last-child</li><li>:last-of-type</li><li>:left</li><li>:link</li><li>:not()</li><li>:nth-child()</li><li>:nth-last-child()</li><li>:nth-last-of-type()</li><li>:nth-of-type()</li></ul><ul><li>:only-child</li><li>:only-of-type</li><li>:optional</li><li>:out-of-range</li><li>:read-only</li><li>:read-write</li><li>:required</li><li>:right</li><li>:root</li><li>:scope</li><li>:target</li><li>:valid</li><li>:visited</li></ul></div><a href="http://bit.ly/pseudo-classes" class="fragment">http://bit.ly/pseudo-classes</a><aside class="notes"><p>Alphabetical order</p><p>Interaction, forms, filter, others</p><p>dir(), left & right are weird</p><p>Link to MDN with list</p></aside><style scoped>ul {
     display: inline-block;
     vertical-align: top;
     list-style: none;
@@ -13,8 +13,8 @@ a {
 </code></pre></div><div class="fragment"><p class="left">This code will select all the <code>&lt;li&gt;</code>,
 and then them filter to get the first from the parent.</p><pre><code data-trim>li:first-child {}
 </code></pre></div><div class="fragment"><p class="left">While this one will add an empty element before
-the content of the first <code>&lt;li&gt;</code>.</p><pre><code data-trim>.li:first-child:before {}
-</code></pre></div><aside class="notes"><p>Pseudo-elements have 2 : in CSS3</p></aside></section><section><h2>Pseudo-elements</h2><ul><li class="fragment">::first-letter</li><li class="fragment">::first-line</li><li class="fragment">::selection</li><li class="fragment">::before</li><li class="fragment">::after</li></ul><a href="http://bit.ly/pseudo-elements" class="fragment">http://bit.ly/pseudo-elements</a><aside class="notes"><p>Since IE8</p><p>::selection is not standard</p><p>List from MDN with links</p></aside><style scoped>ul {
+the content of all the <code>&lt;li&gt;</code>s.</p><pre><code data-trim>li:before {}
+</code></pre></div><aside class="notes"><p>Pseudo-elements content is replaced from the parent or null (before/after)</p><p>Pseudo-elements are not in the DOM, no JS interaction possible</p></aside></section><section><h2>Pseudo-elements</h2><ul><li class="fragment">::first-letter</li><li class="fragment">::first-line</li><li class="fragment">::selection</li><li class="fragment">::before</li><li class="fragment">::after</li></ul><a href="http://bit.ly/pseudo-elements" class="fragment">http://bit.ly/pseudo-elements</a><aside class="notes"><p>Pseudo-elements have 2 : in CSS3</p><p>Since IE8, CSS 2.1</p><p>::selection is not standard</p><p>List from MDN with links</p></aside><style scoped>ul {
     list-style: none;
 }
 
@@ -22,8 +22,10 @@ a {
     display: block;
     font-size: 24px;
 }</style></section><section><h2>::first-letter</h2><div class="fragment"><blockquote class="lorem"><span class="first-letter">L</span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</blockquote><blockquote class="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-</blockquote></div><pre class="fragment"><style contenteditable style="display: block">.lorem:first-child .first-letter { /*,
-.lorem:last-child:first-letter { */
+</blockquote></div><pre class="fragment"><style contenteditable style="display: block">.lorem:first-child .first-letter {
+/*,
+.lorem:last-child:first-letter {
+*/
     font-size: 175%;
     line-height: 67%;
     float: left;
@@ -86,7 +88,7 @@ p {
 </style></pre></div><aside class="notes"><p>Don't put content in it, screen readers & bot don't read them</p></aside></section><section><h2>Arrows</h2><iframe src="http://codepen.io/Calvein/full/tjKba"></iframe><p>by <a href="http://twitter.com/chriscoyier">Chris Coyier (@chriscoyier)</a></p><aside class="notes"><p><b>Click in the pen</b></p><p>Use hands and rectangles to show border</p></aside><style scoped>iframe {
     width: 100%;
     min-height: 300px;
-}</style></section><section data-section="shapes"><h2>Shapes</h2><div class="fragment"><h4>Circles</h4><p class="example circle">I have a bullet point</p><pre><style contenteditable style="display: block">[data-section=shapes] .example:before {
+}</style></section><section data-section="shapes"><h2>Other shapes</h2><div class="fragment"><h4>Circles</h4><p class="example circle">I have a bullet point</p><pre><style contenteditable style="display: block">[data-section=shapes] .example:before {
     content: '';
     display: inline-block;
     width: 20px;
@@ -105,11 +107,11 @@ p {
     -webkit-transform: rotate(-45deg);
     -webkit-transform-origin: 0;
 }
-</style></pre></div><ul class="fragment"><li><a href="https://css-tricks.com/examples/ShapesOfCSS/">Shape of CSS </a></li><li><a href="http://nicolasgallagher.com/pure-css-gui-icons/demo/">Pure CSS GUI icons</a> by <a href="https://twitter.com/necolas">Nicolas Gallagher (@necolas)</a></li></ul><aside class="notes"><p>Intro to next slide</p></aside></section><section><h2>Real life examples</h2><img src="img/arrows.png" class="fragment"><img src="img/circle.png" class="fragment"><img src="img/heaps.png" class="fragment"><img src="img/heaps2.png" class="fragment"><aside class="notes"><p>Small triangle in a bigger one</p><p>Circle, easy to change color & size</p></aside><style scoped>img {
+</style></pre></div><ul class="fragment"><li><a href="https://css-tricks.com/examples/ShapesOfCSS/">Shape of CSS </a></li><li><a href="http://nicolasgallagher.com/pure-css-gui-icons/demo/">Pure CSS GUI icons</a> by <a href="https://twitter.com/necolas">Nicolas Gallagher (@necolas)</a></li></ul><aside class="notes"><p>Intro to next slide</p></aside></section><section><h2>Real life examples</h2><img src="img/arrows.png" class="fragment"><img src="img/circle.png" class="fragment"><img src="img/heaps.png" class="fragment"><img src="img/heaps2.png" class="fragment"><aside class="notes"><p>Small triangle in a bigger one</p><p>Circle, easy to change color & size</p><p>Next is snippets/protips</p></aside><style scoped>img {
     display: block;
-    margin: 10px auto;
+    margin: 40px auto;
     border: 0;
-}</style></section><section><h2>Clearfix</h2><pre><code data-trim>.clearfix:before,
+}</style></section><section><h2>Clearfix</h2><p>From HTML5 boilerplate, used by Bootstrap.</p><pre><code data-trim>.clearfix:before,
 .clearfix:after {
     content: " ";
     display: table;
@@ -133,7 +135,8 @@ p {
     vertical-align: middle;
     height: 100%;
 }
-</style></pre><aside class="notes"><p>We don't have the size of anything (so no top 50% margin-top - width / 2)</p><p>Needs only inline blocks inside</p></aside></section><section><h2>Ribbons</h2><iframe src="http://soiheardyouliekribbon.com/v2/#BADA55"></iframe><p>See <a href="http://soiheardyouliekribbon.com/">http://soiheardyouliekribbon.com</a></p><aside class="notes"><p><b>3 el, h1, i & u</b></p></aside><style scoped>iframe {
+</style></pre><aside class="notes"><p>We don't have the size of anything (so no top 50% margin-top - width / 2)</p><p>Needs only inline blocks inside</p><p>Next is a overkill example</p></aside></section><section><h2>Ribbons</h2><iframe src="http://soiheardyouliekribbon.com/v2/#BADA55"></iframe><p>See <a href="http://soiheardyouliekribbon.com/">http://soiheardyouliekribbon.com</a></p><aside class="notes"><p>3 el, h1, i & u</p></aside><style scoped>iframe {
     width: 100%;
     min-height: 400px;
+    overflow: hidden;
 }</style></section></section><section><section><h1>Voilà</h1><p>François Robichet <a href="http://twitter.com/calvein">(@calvein)</a></p><a href="http://bit.ly/pseudo-elements-talk">http://bit.ly/pseudo-elements-talk</a></section></section></div></div><script src="lib/js/head.min.js"></script><script src="js/reveal.js"></script><script src="bundle.js"></script></body></html>

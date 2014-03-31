@@ -22,9 +22,10 @@ section
     .fragment
         p.left.
             While this one will add an empty element before
-            the content of the first <code>&lt;li&gt;</code>.
+            the content of all the <code>&lt;li&gt;</code>s.
         pre: code(data-trim).
-            .li:first-child:before {}
+            li:before {}
 
     aside.notes
-        p Pseudo-elements have 2 : in CSS3
+        p Pseudo-elements content is replaced from the parent or null (before/after)
+        p Pseudo-elements are not in the DOM, no JS interaction possible
